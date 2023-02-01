@@ -1,0 +1,50 @@
+<defun name="aggregate_sum">
+  <in name="values" type="int" place="values"/>
+  <out name="sum" type="int" place="sum"/>
+
+  <net>
+    <place name="values" type="int"/>
+    <place name="sum" type="int">
+      <token>
+        <value>0</value>
+      </token>
+    </place>
+
+    <transition name="aggregate">
+      <defun>
+        <in name="value" type="int"/>
+        <inout name="sum" type="int"/>
+
+        <module name="aggregate_sum" function="plus2 (value, sum)">
+        <cinclude href="stdio.h"/>
+        <cinclude href="stdlib.h"/>
+        <cinclude href="string.h"/>
+        <cinclude href="iostream"/>
+        <code><![CDATA[
+          std::cout << "Worker here!" << std::endl;
+        
+          // convert integer from token to string filename
+          char buffer[4];
+          snprintf(buffer, 4, "%03d", value);
+          
+          // build execution command for application
+          char skeleton[] = "/home/juschei/Desktop/test.py --nr ";
+          
+          int command_size = sizeof(buffer) + sizeof(skeleton);
+          char command[command_size];
+          strcat(command, skeleton);
+          strcat(command, buffer);
+          
+          std::cout << command << std::endl;
+          
+          // execute command on system
+          system(command);
+        ]]></code>
+        </module>
+      </defun>
+
+      <connect-in port="value" place="values"/>
+      <connect-inout port="sum" place="sum"/>
+    </transition>
+  </net>
+</defun>

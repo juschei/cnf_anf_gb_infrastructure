@@ -1,0 +1,10 @@
+/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/install/strip.dir
+/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/install/local.dir
+/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/edit_cache.dir
+/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/aggregate_sum-bundled-libraries.dir
+/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/aggregate_sum.dir
+/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/workflow_library.dir
+/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/install.dir
+/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/list_install_components.dir
+/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/rebuild_cache.dir
+/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/compiled_petri_net.dir

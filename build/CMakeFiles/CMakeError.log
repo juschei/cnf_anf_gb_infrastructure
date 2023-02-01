@@ -1,0 +1,88 @@
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3035f/fast && /usr/bin/make -f CMakeFiles/cmTC_3035f.dir/build.make CMakeFiles/cmTC_3035f.dir/build
+make[1]: Entering directory '/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3035f.dir/src.cxx.o
+/usr/bin/c++    -DCMAKE_HAVE_LIBC_PTHREAD   -std=gnu++14 -o CMakeFiles/cmTC_3035f.dir/src.cxx.o -c /home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_3035f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3035f.dir/link.txt --verbose=1
+/usr/bin/c++   -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_3035f.dir/src.cxx.o  -o cmTC_3035f 
+/usr/bin/ld: CMakeFiles/cmTC_3035f.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.cxx:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.cxx:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_3035f.dir/build.make:87: cmTC_3035f] Error 1
+make[1]: Leaving directory '/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_3035f/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6f64b/fast && /usr/bin/make -f CMakeFiles/cmTC_6f64b.dir/build.make CMakeFiles/cmTC_6f64b.dir/build
+make[1]: Entering directory '/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6f64b.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu++14 -o CMakeFiles/cmTC_6f64b.dir/CheckFunctionExists.cxx.o -c /home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_6f64b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6f64b.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_6f64b.dir/CheckFunctionExists.cxx.o  -o cmTC_6f64b  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_6f64b.dir/build.make:87: cmTC_6f64b] Error 1
+make[1]: Leaving directory '/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_6f64b/fast] Error 2
+
+
+
+Performing C++ SOURCE FILE Test CXX_COMPILER_SUPPORTS__Wundefined_reinterpret_cast failed with the following output:
+Change Dir: /home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6e6e2/fast && /usr/bin/make -f CMakeFiles/cmTC_6e6e2.dir/build.make CMakeFiles/cmTC_6e6e2.dir/build
+make[1]: Entering directory '/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6e6e2.dir/src.cxx.o
+/usr/bin/c++    -DCXX_COMPILER_SUPPORTS__Wundefined_reinterpret_cast   -Wundefined-reinterpret-cast -std=gnu++14 -o CMakeFiles/cmTC_6e6e2.dir/src.cxx.o -c /home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wundefined-reinterpret-cast'
+make[1]: *** [CMakeFiles/cmTC_6e6e2.dir/build.make:66: CMakeFiles/cmTC_6e6e2.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_6e6e2/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test CXX_COMPILER_SUPPORTS__Wextra_semi_stmt failed with the following output:
+Change Dir: /home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_057b2/fast && /usr/bin/make -f CMakeFiles/cmTC_057b2.dir/build.make CMakeFiles/cmTC_057b2.dir/build
+make[1]: Entering directory '/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_057b2.dir/src.cxx.o
+/usr/bin/c++    -DCXX_COMPILER_SUPPORTS__Wextra_semi_stmt   -Wextra-semi-stmt -std=gnu++14 -o CMakeFiles/cmTC_057b2.dir/src.cxx.o -c /home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wextra-semi-stmt'; did you mean '-Wextra-semi'?
+make[1]: *** [CMakeFiles/cmTC_057b2.dir/build.make:66: CMakeFiles/cmTC_057b2.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/juschei/Desktop/aggregate_sum/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_057b2/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }

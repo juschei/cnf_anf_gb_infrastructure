@@ -1,0 +1,7 @@
+# Hashes of file build rules.
+014ea88be0854f2703337e83c89a4d0e CMakeFiles/aggregate_sum-bundled-libraries
+014ea88be0854f2703337e83c89a4d0e CMakeFiles/compiled_petri_net
+014ea88be0854f2703337e83c89a4d0e CMakeFiles/workflow_library
+0168d8b8df936bf5b35636f999e56818 aggregate_sum.pnet
+1f415da98b1148489a090d42bd5e6074 bundle-aggregate_sum
+df212fae0bff5223c43a2c04f10aa5ab gen/pnetc/op/libaggregate_sum.so

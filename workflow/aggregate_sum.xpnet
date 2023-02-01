@@ -1,0 +1,57 @@
+<defun name="aggregate_sum">
+  <in name="values" type="int" place="values"/>
+  <out name="sum" type="int" place="sum"/>
+
+  <net>
+    <place name="values" type="int"/>
+    <place name="sum" type="int"/>
+
+
+    <transition name="aggregate">
+      <defun>
+        <in name="value" type="int"/>
+        <out name="sum" type="int"/>
+
+        <module name="aggregate_sum" function="plus2 (value, sum)">
+        <cinclude href="stdio.h"/>
+        <cinclude href="stdlib.h"/>
+        <cinclude href="string.h"/>
+        <cinclude href="iostream"/>
+        <cinclude href="unistd.h"/>
+        <code><![CDATA[
+          std::cout << "Worker here!" << std::endl;
+          
+          // convert integer from token to string filename
+          char buffer[4];
+          snprintf(buffer, 4, "%03d", value);
+          
+          // build execution command for application
+          //char skeleton[] = "echo $USER ";
+          char skeleton[] = "/usr/bin/sage /home/juschei/Desktop/cnf_anf_gb/worker.sage.py --nr ";
+          //char skeleton[] = "/usr/bin/python3 /home/juschei/Desktop/test.py --nr ";
+          char logging_pipe[] = " 2> /home/juschei/Desktop/cnf_anf_gb/logs/";
+          
+          int command_size = 2*sizeof(buffer) + sizeof(skeleton) + sizeof(logging_pipe) + 2;
+          char command[command_size];
+          command[0] = '\0'; // to concat to the beginning without junk
+          //test
+          strcat(command, skeleton);
+          strcat(command, buffer);
+          strcat(command, logging_pipe);
+          strcat(command, buffer);
+          
+          
+          std::cout << command << std::endl;
+          
+          // execute command on system
+          std::cout << system(command) << std::endl;
+          //sleep(2);
+        ]]></code>
+        </module>
+      </defun>
+
+      <connect-in port="value" place="values"/>
+      <connect-out port="sum" place="sum"/>
+    </transition>
+  </net>
+</defun>
