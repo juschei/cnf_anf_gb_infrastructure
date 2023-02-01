@@ -34,7 +34,8 @@
           int command_size = 2*sizeof(buffer) + sizeof(skeleton) + sizeof(logging_pipe) + 2;
           char command[command_size];
           command[0] = '\0'; // to concat to the beginning without junk
-          //test
+          
+          
           strcat(command, skeleton);
           strcat(command, buffer);
           strcat(command, logging_pipe);
