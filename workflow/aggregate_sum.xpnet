@@ -27,7 +27,8 @@
           
           // build execution command for application
           //char skeleton[] = "echo $USER ";
-          char skeleton[] = "/usr/bin/sage /home/juschei/Desktop/cnf_anf_gb/worker.sage.py --nr ";
+          //char skeleton[] = "/usr/bin/sage /home/juschei/Desktop/cnf_anf_gb/worker.sage.py --nr ";
+          char skeleton[] = "/usr/bin/sage /home/juschei/Desktop/cnf_anf_gb/batch_processor.sage.py --startidx ";
           //char skeleton[] = "/usr/bin/python3 /home/juschei/Desktop/test.py --nr ";
           char logging_pipe[] = " 2> /home/juschei/Desktop/cnf_anf_gb/logs/";
           

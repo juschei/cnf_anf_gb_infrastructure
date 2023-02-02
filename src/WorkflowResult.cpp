@@ -42,7 +42,7 @@ namespace aggregate_sum
   template<typename T, typename TypeDescription>
     T const& WorkflowResult::get_impl (Key key, TypeDescription type_description) const
   {
-    assert_key_count (key, 47);
+    assert_key_count (key, 4);
 
     auto const& value (_values_on_ports.find (key)->second);
 
