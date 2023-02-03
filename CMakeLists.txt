@@ -20,9 +20,6 @@ find_package (Boost 1.61.0 REQUIRED
 
 include (util-cmake/add_macros)
 
-find_package(Python REQUIRED Development)
-include(Python::Python)
-
 set (BUNDLE_ROOT "libexec/bundle")
 bundle_GPISpace (DESTINATION "${BUNDLE_ROOT}/gpispace"
   COMPONENTS runtime
@@ -64,7 +61,6 @@ add_custom_target (workflow_library
     "${WRAPPER_LIBRARY}"
 )
 
-
 extended_add_executable (NAME "${DRIVER_BINARY}"
   DONT_APPEND_EXE_SUFFIX
   SOURCES
@@ -75,7 +71,6 @@ extended_add_executable (NAME "${DRIVER_BINARY}"
     src/WorkflowResult.cpp
     src/ValuesOnPorts.cpp
   INCLUDE_DIRECTORIES PRIVATE include
-                              /usr/include/python3.8
   LIBRARIES PRIVATE Util::Generic
                     GPISpace::execution
                     Boost::headers
@@ -84,10 +79,6 @@ extended_add_executable (NAME "${DRIVER_BINARY}"
   INSTALL
   INSTALL_DESTINATION bin
 )
-
-
-#target_link_libraries(aggregate_sum PRIVATE Python::Python)
-
 bundle_GPISpace_add_rpath (TARGET "${DRIVER_BINARY}" INSTALL_DIRECTORY "bin")
 
 install (FILES
