@@ -78,8 +78,6 @@ extended_add_executable (NAME "${DRIVER_BINARY}"
                     Boost::headers
                     Boost::filesystem
                     Boost::program_options
-                    /usr/lib/python3.8/config-3.8-x86_64-linux-gnu
-                    /usr/lib
   INSTALL
   INSTALL_DESTINATION bin
 )
