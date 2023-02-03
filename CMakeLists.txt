@@ -17,6 +17,8 @@ find_package (Boost 1.61.0 REQUIRED
      filesystem
      program_options
 )
+find_package(PythonLibs REQUIRED)
+include_directories(${PYTHON_INCLUDE_DIRS})
 
 include (util-cmake/add_macros)
 
@@ -79,6 +81,9 @@ extended_add_executable (NAME "${DRIVER_BINARY}"
   INSTALL
   INSTALL_DESTINATION bin
 )
+
+target_link_libraries(aggregate_sum ${PYTHON_LIBRARIES})
+
 bundle_GPISpace_add_rpath (TARGET "${DRIVER_BINARY}" INSTALL_DIRECTORY "bin")
 
 install (FILES
