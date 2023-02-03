@@ -83,7 +83,7 @@ extended_add_executable (NAME "${DRIVER_BINARY}"
   INSTALL_DESTINATION bin
 )
 
-target_link_libraries(WRAPPER_LIBRARY PUBLIC ${PYTHON_LIBRARIES})
+
 
 bundle_GPISpace_add_rpath (TARGET "${DRIVER_BINARY}" INSTALL_DIRECTORY "bin")
 
@@ -95,3 +95,5 @@ install (FILES
   "${WRAPPER_LIBRARY}"
   DESTINATION lib
 )
+
+target_link_libraries(WRAPPER_LIBRARY PUBLIC ${PYTHON_LIBRARIES})
