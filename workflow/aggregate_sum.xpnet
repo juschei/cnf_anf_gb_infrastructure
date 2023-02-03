@@ -18,7 +18,7 @@
         <cinclude href="string.h"/>
         <cinclude href="iostream"/>
         <cinclude href="unistd.h"/>
-        <cinclude href="Python.h"/>
+        
         <code><![CDATA[
           std::cout << "Worker here!" << std::endl;
           
