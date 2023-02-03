@@ -78,11 +78,12 @@ extended_add_executable (NAME "${DRIVER_BINARY}"
                     Boost::headers
                     Boost::filesystem
                     Boost::program_options
+                    ${PYTHON_LIBRARIES}
   INSTALL
   INSTALL_DESTINATION bin
 )
 
-target_link_libraries(aggregate_sum PUBLIC ${PYTHON_LIBRARIES})
+#target_link_libraries(aggregate_sum PUBLIC ${PYTHON_LIBRARIES})
 
 bundle_GPISpace_add_rpath (TARGET "${DRIVER_BINARY}" INSTALL_DIRECTORY "bin")
 
