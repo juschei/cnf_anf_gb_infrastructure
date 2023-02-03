@@ -83,7 +83,7 @@ extended_add_executable (NAME "${DRIVER_BINARY}"
   INSTALL_DESTINATION bin
 )
 
-target_link_libraries(COMPILED_PETRI_NET PUBLIC ${PYTHON_LIBRARIES})
+target_link_libraries(WRAPPER_LIBRARY PUBLIC ${PYTHON_LIBRARIES})
 
 bundle_GPISpace_add_rpath (TARGET "${DRIVER_BINARY}" INSTALL_DIRECTORY "bin")
 
