@@ -11,8 +11,6 @@
 
 #include <string>
 
-#include <Pythson.h>
-
 namespace aggregate_sum
 {
   namespace execution
