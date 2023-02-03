@@ -11,6 +11,8 @@
 
 #include <string>
 
+#include <Python.h>
+
 namespace aggregate_sum
 {
   namespace execution
