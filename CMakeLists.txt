@@ -63,7 +63,7 @@ add_custom_target (workflow_library
     "${WRAPPER_LIBRARY}"
 )
 
-extended_add_executable (NAME "${DRIVER_BINARY}"
+extended_add_executable (NAME "${ DRIVER_BINARY}"
   DONT_APPEND_EXE_SUFFIX
   SOURCES
     src/parse_parameters_from_commandline.cpp
@@ -96,4 +96,4 @@ install (FILES
   DESTINATION lib
 )
 
-target_link_libraries(compiled_petri_net PUBLIC ${PYTHON_LIBRARIES})
+target_link_libraries(NAME compiled_petri_net PUBLIC ${PYTHON_LIBRARIES})
