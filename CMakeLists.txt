@@ -63,7 +63,7 @@ add_custom_target (workflow_library
     "${WRAPPER_LIBRARY}"
 )
 
-extended_add_executable (NAME "${ DRIVER_BINARY}"
+extended_add_executable (NAME "${DRIVER_BINARY}"
   DONT_APPEND_EXE_SUFFIX
   SOURCES
     src/parse_parameters_from_commandline.cpp
