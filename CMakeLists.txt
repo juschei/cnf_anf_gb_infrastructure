@@ -96,4 +96,4 @@ install (FILES
   DESTINATION lib
 )
 
-target_link_libraries(NAME compiled_petri_net PUBLIC ${PYTHON_LIBRARIES})
+target_link_libraries(NAME "${compiled_petri_net}" PUBLIC ${PYTHON_LIBRARIES})
