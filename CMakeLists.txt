@@ -61,6 +61,7 @@ add_custom_target (workflow_library
     "${WRAPPER_LIBRARY}"
 )
 
+
 extended_add_executable (NAME "${DRIVER_BINARY}"
   DONT_APPEND_EXE_SUFFIX
   SOURCES
@@ -71,11 +72,14 @@ extended_add_executable (NAME "${DRIVER_BINARY}"
     src/WorkflowResult.cpp
     src/ValuesOnPorts.cpp
   INCLUDE_DIRECTORIES PRIVATE include
+                              /usr/include/python3.8
   LIBRARIES PRIVATE Util::Generic
                     GPISpace::execution
                     Boost::headers
                     Boost::filesystem
                     Boost::program_options
+                    /usr/lib/python3.8/config-3.8-x86_64-linux-gnu
+                    /usr/lib
   INSTALL
   INSTALL_DESTINATION bin
 )
