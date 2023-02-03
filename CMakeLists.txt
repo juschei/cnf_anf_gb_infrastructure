@@ -21,7 +21,7 @@ find_package (Boost 1.61.0 REQUIRED
 include (util-cmake/add_macros)
 
 find_package(Python REQUIRED Development)
-include(Python)
+include(Python::Python)
 
 set (BUNDLE_ROOT "libexec/bundle")
 bundle_GPISpace (DESTINATION "${BUNDLE_ROOT}/gpispace"
