@@ -83,6 +83,10 @@ extended_add_executable (NAME "${DRIVER_BINARY}"
   INSTALL
   INSTALL_DESTINATION bin
 )
+
+find_package(Python REQUIRED Development)
+target_link_libraries(aggregate_sum PRIVATE Python::Python)
+
 bundle_GPISpace_add_rpath (TARGET "${DRIVER_BINARY}" INSTALL_DIRECTORY "bin")
 
 install (FILES
