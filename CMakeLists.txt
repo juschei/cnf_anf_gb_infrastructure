@@ -20,6 +20,9 @@ find_package (Boost 1.61.0 REQUIRED
 
 include (util-cmake/add_macros)
 
+find_package(Python REQUIRED Development)
+include(Python)
+
 set (BUNDLE_ROOT "libexec/bundle")
 bundle_GPISpace (DESTINATION "${BUNDLE_ROOT}/gpispace"
   COMPONENTS runtime
@@ -82,8 +85,8 @@ extended_add_executable (NAME "${DRIVER_BINARY}"
   INSTALL_DESTINATION bin
 )
 
-find_package(Python REQUIRED Development)
-target_link_libraries(aggregate_sum PRIVATE Python::Python)
+
+#target_link_libraries(aggregate_sum PRIVATE Python::Python)
 
 bundle_GPISpace_add_rpath (TARGET "${DRIVER_BINARY}" INSTALL_DIRECTORY "bin")
 
