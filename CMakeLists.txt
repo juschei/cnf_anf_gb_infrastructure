@@ -24,7 +24,7 @@ include (util-cmake/add_macros)
 
 # Python header handling
 
-find_package (PythonInterp)
+find_package (PythonLibs)
 message(STATUS "PYTHON_LIBRARIES = ${PYTHON_LIBRARIES}")
 message(STATUS "PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
 message(STATUS "PYTHON_INCLUDE_DIRS = ${PYTHON_INCLUDE_DIRS}")
