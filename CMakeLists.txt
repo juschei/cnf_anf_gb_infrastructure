@@ -18,17 +18,9 @@ find_package (Boost 1.61.0 REQUIRED
      program_options
 )
 find_package(PythonLibs REQUIRED)
-
-message(STATUS "PYTHON_LIBRARIES = ${PYTHON_LIBRARIES}")
-message(STATUS "PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
-message(STATUS "PYTHON_INCLUDE_DIRS = ${PYTHON_INCLUDE_DIRS}")
-
-
-add_definitions( -DPYTHON_EXECUTABLE="${PYTHON_EXECUTABLE}" )
-add_definitions( -DPYTHON_LIBRARIES="${PYTHON_LIBRARIES}" )
-
 include_directories(${PYTHON_INCLUDE_DIRS})
 
+include (util-cmake/add_macros)
 
 set (BUNDLE_ROOT "libexec/bundle")
 bundle_GPISpace (DESTINATION "${BUNDLE_ROOT}/gpispace"
@@ -71,10 +63,7 @@ add_custom_target (workflow_library
     "${WRAPPER_LIBRARY}"
 )
 
-
-#set_target_properties(workflow_library PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${PYTHON_INCLUDE_DIRS})
-#target_include_directories (workflow_library ${PYTHON_INCLUDE_DIRS})
-# target_link_libraries(workflow_library PUBLIC ${PYTHON_LIBRARIES})
+include_directories(workflow_library ${PYTHON_INCLUDE_DIRS})
 
 extended_add_executable (NAME "${DRIVER_BINARY}"
   DONT_APPEND_EXE_SUFFIX
@@ -109,6 +98,4 @@ install (FILES
   DESTINATION lib
 )
 
-#add_executable(plus_file "${WRAPPER_DIRECTORY}/pnetc/op/aggregate_sum/plus2.cpp")
-#include_directories (plus_file PUBLIC ${PYTHON_INCLUDE_DIRS})
-#target_link_libraries(plus_file PUBLIC ${PYTHON_LIBRARIES})
+#target_link_libraries(aggregate_sum PUBLIC ${PYTHON_LIBRARIES})
