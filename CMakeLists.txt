@@ -32,7 +32,7 @@ message(STATUS "PYTHON_INCLUDE_DIRS = ${PYTHON_INCLUDE_DIRS}")
 add_definitions( -DPYTHON_EXECUTABLE="${PYTHON_EXECUTABLE}" )
 add_definitions( -DPYTHON_LIBRARIES="${PYTHON_LIBRARIES}" )
 
-INCLUDE_DIRECTORIES (${PYTHON_INCLUDE_DIRS} )
+include_directories(${PYTHON_INCLUDE_DIRS})
 
 
 set (BUNDLE_ROOT "libexec/bundle")
@@ -64,6 +64,7 @@ add_custom_command (
       --gen-cxxflags="-O3"
       --input="${PETRI_NET}"
       --output="/dev/null"
+      --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
       --path-to-cpp="${WRAPPER_DIRECTORY}"
   COMMAND
     +make -C "${WRAPPER_DIRECTORY}"
