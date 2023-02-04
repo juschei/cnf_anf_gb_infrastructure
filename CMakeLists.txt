@@ -35,7 +35,7 @@ set (DRIVER_BINARY "${PROJECT_NAME}")
 
 add_custom_command (
   COMMAND
-    GPISpace::pnetc --input="${PETRI_NET}" --output="${COMPILED_PETRI_NET}"
+    GPISpace::pnetc --input="${PETRI_NET}" --output="${COMPILED_PETRI_NET}" --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
   OUTPUT "${COMPILED_PETRI_NET}"
   DEPENDS "${PETRI_NET}"
 )
