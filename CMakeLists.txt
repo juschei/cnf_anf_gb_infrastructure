@@ -62,8 +62,16 @@ add_custom_target (workflow_library
   DEPENDS
     "${WRAPPER_LIBRARY}"
 )
+find_package (PythonInterp)
+message(STATUS "PYTHON_LIBRARIES = ${PYTHON_LIBRARIES}")
+message(STATUS "PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
+message(STATUS "PYTHON_INCLUDE_DIRS = ${PYTHON_INCLUDE_DIRS}")
 
-include_directories(workflow_library ${PYTHON_INCLUDE_DIRS})
+add_definitions( -DPYTHON_EXECUTABLE="${PYTHON_EXECUTABLE}" )
+add_definitions( -DPYTHON_LIBRARIES="${PYTHON_LIBRARIES}" )
+
+INCLUDE_DIRECTORIES (${PYTHON_INCLUDE_DIRS} )
+
 
 extended_add_executable (NAME "${DRIVER_BINARY}"
   DONT_APPEND_EXE_SUFFIX
