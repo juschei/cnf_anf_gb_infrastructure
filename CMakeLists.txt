@@ -22,6 +22,19 @@ include_directories(${PYTHON_INCLUDE_DIRS})
 
 include (util-cmake/add_macros)
 
+# Python header handling
+
+find_package (PythonInterp)
+message(STATUS "PYTHON_LIBRARIES = ${PYTHON_LIBRARIES}")
+message(STATUS "PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
+message(STATUS "PYTHON_INCLUDE_DIRS = ${PYTHON_INCLUDE_DIRS}")
+
+add_definitions( -DPYTHON_EXECUTABLE="${PYTHON_EXECUTABLE}" )
+add_definitions( -DPYTHON_LIBRARIES="${PYTHON_LIBRARIES}" )
+
+INCLUDE_DIRECTORIES (${PYTHON_INCLUDE_DIRS} )
+
+
 set (BUNDLE_ROOT "libexec/bundle")
 bundle_GPISpace (DESTINATION "${BUNDLE_ROOT}/gpispace"
   COMPONENTS runtime
@@ -62,15 +75,7 @@ add_custom_target (workflow_library
   DEPENDS
     "${WRAPPER_LIBRARY}"
 )
-find_package (PythonInterp)
-message(STATUS "PYTHON_LIBRARIES = ${PYTHON_LIBRARIES}")
-message(STATUS "PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
-message(STATUS "PYTHON_INCLUDE_DIRS = ${PYTHON_INCLUDE_DIRS}")
 
-add_definitions( -DPYTHON_EXECUTABLE="${PYTHON_EXECUTABLE}" )
-add_definitions( -DPYTHON_LIBRARIES="${PYTHON_LIBRARIES}" )
-
-INCLUDE_DIRECTORIES (${PYTHON_INCLUDE_DIRS} )
 
 
 extended_add_executable (NAME "${DRIVER_BINARY}"
