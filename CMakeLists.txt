@@ -71,8 +71,9 @@ add_custom_command (
       --gen-cxxflags="-O3"
       --input="${PETRI_NET}"
       --output="/dev/null"
+      --gen-cxxflags=-std=c++11
       --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
-      --gen-ldflags=-L"${PYTHON_LIBRARIES}"
+      --gen-ldflags="-L${PYTHON_LIBRARIES}"
       --path-to-cpp="${WRAPPER_DIRECTORY}"
   COMMAND
     +make -C "${WRAPPER_DIRECTORY}"
