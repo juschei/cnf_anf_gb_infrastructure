@@ -70,7 +70,7 @@ add_custom_command (
       --gen-cxxflags="-O3"
       --input="${PETRI_NET}"
       --output="/dev/null"
-      --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
+      #--gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
       --gen-ldflags=-L"${PYTHON_LIBRARIES}"
       --path-to-cpp="${WRAPPER_DIRECTORY}"
   COMMAND
