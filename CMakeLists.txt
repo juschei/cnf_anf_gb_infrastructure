@@ -102,5 +102,5 @@ install (FILES
 )
 
 add_executable(plus_file "${WRAPPER_DIRECTORY}/pnetc/op/aggregate_sum/plus2.cpp")
-target_include_directories (plus_file STATIC ${PYTHON_INCLUDE_DIRS})
+include_directories (plus_file PUBLIC ${PYTHON_INCLUDE_DIRS})
 target_link_libraries(plus_file PUBLIC ${PYTHON_LIBRARIES})
