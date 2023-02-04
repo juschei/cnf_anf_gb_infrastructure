@@ -75,7 +75,7 @@ add_custom_command (
       --output="/dev/null"
       --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
       --gen-ldflags="-L${PYTHON_LIBRARIES}"
-      --gen-ldflags="-l${PYTHON_EXECUTABLE}"
+      --gen-ldflags="-lpython3.8"
       --path-to-cpp="${WRAPPER_DIRECTORY}"
   COMMAND
     +make -C "${WRAPPER_DIRECTORY}"
