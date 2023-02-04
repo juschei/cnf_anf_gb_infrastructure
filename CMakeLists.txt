@@ -57,7 +57,7 @@ add_custom_command (
 
   OUTPUT "${COMPILED_PETRI_NET}"
   DEPENDS "${PETRI_NET}"
-          ${PYTHON_LIBRARIES}
+          "${PYTHON_LIBRARIES}"
 )
 add_custom_target (compiled_petri_net
   ALL
@@ -79,7 +79,7 @@ add_custom_command (
     +make -C "${WRAPPER_DIRECTORY}"
   OUTPUT "${WRAPPER_LIBRARY}"
   DEPENDS "${PETRI_NET}"
-          ${PYTHON_LIBRARIES}
+          "${PYTHON_LIBRARIES}"
 )
 add_custom_target (workflow_library
   ALL
