@@ -63,7 +63,7 @@ add_custom_target (workflow_library
     "${WRAPPER_LIBRARY}"
 )
 
-set_target_properties(workflow_library INTERFACE INCLUDE_DIRECTORIES ${PYTHON_INCLUDE_DIRS})
+set_target_properties(workflow_library PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${PYTHON_INCLUDE_DIRS})
 #target_include_directories (workflow_library ${PYTHON_INCLUDE_DIRS})
 # target_link_libraries(workflow_library PUBLIC ${PYTHON_LIBRARIES})
 
