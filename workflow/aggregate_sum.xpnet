@@ -20,7 +20,7 @@
         <cinclude href="unistd.h"/>
         <cinclude href="Python.h"/>
         <code><![CDATA[
-          Pyasklduh();
+          PyRun_SimpleString("print('test')");
 
           std::cout << "Worker here!" << std::endl;
           
