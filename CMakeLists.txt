@@ -18,13 +18,21 @@ find_package (Boost 1.61.0 REQUIRED
      program_options
 )
 find_package(PythonLibs REQUIRED)
-include_directories(${PYTHON_INCLUDE_DIRS})
-
-include (util-cmake/add_macros)
 
 message(STATUS "PYTHON_LIBRARIES = ${PYTHON_LIBRARIES}")
 message(STATUS "PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
 message(STATUS "PYTHON_INCLUDE_DIRS = ${PYTHON_INCLUDE_DIRS}")
+
+
+add_definitions( -DPYTHON_EXECUTABLE="${PYTHON_EXECUTABLE}" )
+add_definitions( -DPYTHON_LIBRARIES="${PYTHON_LIBRARIES}" )
+
+INCLUDE_DIRECTORIES (${PYTHON_INCLUDE_DIRS} )
+
+
+
+DPYTHON_EXECUTABLE
+
 
 set (BUNDLE_ROOT "libexec/bundle")
 bundle_GPISpace (DESTINATION "${BUNDLE_ROOT}/gpispace"
@@ -39,7 +47,7 @@ set (DRIVER_BINARY "${PROJECT_NAME}")
 
 add_custom_command (
   COMMAND
-    GPISpace::pnetc --input="${PETRI_NET}" --output="${COMPILED_PETRI_NET}"
+    GPISpace::pnetc --input="${PETRI_NET}" --output="${COMPILED_PETRI_NET}" --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}" 
   OUTPUT "${COMPILED_PETRI_NET}"
   DEPENDS "${PETRI_NET}"
 )
