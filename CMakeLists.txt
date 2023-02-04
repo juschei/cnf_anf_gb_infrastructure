@@ -27,7 +27,7 @@ message(STATUS "PYTHON_INCLUDE_DIRS = ${PYTHON_INCLUDE_DIRS}")
 add_definitions( -DPYTHON_EXECUTABLE="${PYTHON_EXECUTABLE}" )
 add_definitions( -DPYTHON_LIBRARIES="${PYTHON_LIBRARIES}" )
 
-INCLUDE_DIRECTORIES (${PYTHON_INCLUDE_DIRS} )
+INCLUDE_DIRECTORIES (${PYTHON_INCLUDE_DIRS})
 
 
 
@@ -47,7 +47,7 @@ set (DRIVER_BINARY "${PROJECT_NAME}")
 
 add_custom_command (
   COMMAND
-    GPISpace::pnetc --input="${PETRI_NET}" --output="${COMPILED_PETRI_NET}" --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}" 
+    GPISpace::pnetc --input="${PETRI_NET}" --output="${COMPILED_PETRI_NET}" --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
   OUTPUT "${COMPILED_PETRI_NET}"
   DEPENDS "${PETRI_NET}"
 )
