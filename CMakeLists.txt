@@ -3,6 +3,8 @@ project (aggregate_sum
   LANGUAGES CXX
 )
 
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
 set (CMAKE_CXX_STANDARD 14)
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -71,7 +73,6 @@ add_custom_command (
       --gen-cxxflags="-O3"
       --input="${PETRI_NET}"
       --output="/dev/null"
-      --gen-cxxflags=-std=c++11
       --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
       --gen-ldflags="-L${PYTHON_LIBRARIES}"
       --path-to-cpp="${WRAPPER_DIRECTORY}"
