@@ -63,8 +63,8 @@ add_custom_target (workflow_library
     "${WRAPPER_LIBRARY}"
 )
 
-include_directories(workflow_library ${PYTHON_INCLUDE_DIRS})
-target_link_libraries(workflow_library PUBLIC ${PYTHON_LIBRARIES})
+target_include_directories (workflow_library ${PYTHON_INCLUDE_DIRS})
+# target_link_libraries(workflow_library PUBLIC ${PYTHON_LIBRARIES})
 
 extended_add_executable (NAME "${DRIVER_BINARY}"
   DONT_APPEND_EXE_SUFFIX
