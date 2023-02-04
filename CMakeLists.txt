@@ -54,7 +54,7 @@ add_custom_command (
       --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
       --gen-cxxflags=-L"${PYTHON_LIBRARIES}"
       --gen-cxxflags=-l"${PYTHON_EXECUTABLE}"
-      --gen-ldflags=L"${PYTHON_LIBRARIES}"
+      --gen-ldflags=-L"${PYTHON_LIBRARIES}"
 
   OUTPUT "${COMPILED_PETRI_NET}"
   DEPENDS "${PETRI_NET}"
@@ -75,7 +75,7 @@ add_custom_command (
       --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
       --gen-cxxflags=-L"${PYTHON_LIBRARIES}"
       --gen-cxxflags=-l"${PYTHON_EXECUTABLE}"
-      --gen-ldflags=L"${PYTHON_LIBRARIES}"
+      --gen-ldflags=-L"${PYTHON_LIBRARIES}"
       --path-to-cpp="${WRAPPER_DIRECTORY}"
   COMMAND
     +make -C "${WRAPPER_DIRECTORY}"
