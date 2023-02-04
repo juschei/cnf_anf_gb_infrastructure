@@ -20,6 +20,8 @@
         <cinclude href="unistd.h"/>
         <cinclude href="Python.h"/>
         <code><![CDATA[
+          Py_Initialize();
+
           std::cout << "Worker here!" << std::endl;
           
           // convert integer from token to string filename
