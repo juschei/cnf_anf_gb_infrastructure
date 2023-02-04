@@ -22,6 +22,10 @@ include_directories(${PYTHON_INCLUDE_DIRS})
 
 include (util-cmake/add_macros)
 
+message(STATUS "PYTHON_LIBRARIES = ${PYTHON_LIBRARIES}")
+message(STATUS "PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
+message(STATUS "PYTHON_INCLUDE_DIRS = ${PYTHON_INCLUDE_DIRS}")
+
 set (BUNDLE_ROOT "libexec/bundle")
 bundle_GPISpace (DESTINATION "${BUNDLE_ROOT}/gpispace"
   COMPONENTS runtime
@@ -101,6 +105,6 @@ install (FILES
   DESTINATION lib
 )
 
-add_executable(plus_file "${WRAPPER_DIRECTORY}/pnetc/op/aggregate_sum/plus2.cpp")
-include_directories (plus_file PUBLIC ${PYTHON_INCLUDE_DIRS})
-target_link_libraries(plus_file PUBLIC ${PYTHON_LIBRARIES})
+#add_executable(plus_file "${WRAPPER_DIRECTORY}/pnetc/op/aggregate_sum/plus2.cpp")
+#include_directories (plus_file PUBLIC ${PYTHON_INCLUDE_DIRS})
+#target_link_libraries(plus_file PUBLIC ${PYTHON_LIBRARIES})
