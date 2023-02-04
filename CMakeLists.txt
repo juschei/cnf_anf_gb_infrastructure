@@ -54,7 +54,7 @@ add_custom_command (
       --input="${PETRI_NET}"
       --output="${COMPILED_PETRI_NET}"
       --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
-      --gen-ldflags="$-L{PYTHON_LIBRARIES}"
+      --gen-ldflags="-L${PYTHON_LIBRARIES}"
 
   OUTPUT "${COMPILED_PETRI_NET}"
   DEPENDS "${PETRI_NET}"
