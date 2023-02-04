@@ -69,7 +69,7 @@ add_custom_command (
   COMMAND
     GPISpace::pnetc
       --gen-cxxflags="-O3"
-      --input="$/{PETRI_NET}"
+      --input="${PETRI_NET}"
       --output="/dev/null"
       --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
       --gen-ldflags=-L"${PYTHON_LIBRARIES}"
