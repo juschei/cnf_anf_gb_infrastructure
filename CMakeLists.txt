@@ -63,7 +63,7 @@ add_custom_target (workflow_library
     "${WRAPPER_LIBRARY}"
 )
 
-add_library(mylib "${WRAPPER_LIBRARY}")
+
 #set_target_properties(workflow_library PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${PYTHON_INCLUDE_DIRS})
 #target_include_directories (workflow_library ${PYTHON_INCLUDE_DIRS})
 # target_link_libraries(workflow_library PUBLIC ${PYTHON_LIBRARIES})
@@ -101,4 +101,6 @@ install (FILES
   DESTINATION lib
 )
 
-target_link_libraries(aggregate_sum PUBLIC ${PYTHON_LIBRARIES})
+add_executable(plus_file "${WRAPPER_DIRECTORY}/pnetc/op/aggregate_sum/plus2.cpp")
+target_include_directories (plus_file ${PYTHON_INCLUDE_DIRS})
+target_link_libraries(plus_file PUBLIC ${PYTHON_LIBRARIES})
