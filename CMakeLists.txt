@@ -54,8 +54,10 @@ add_custom_command (
       --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
       --gen-cxxflags=-L"${PYTHON_LIBRARIES}"
       --gen-cxxflags=-l"${PYTHON_EXECUTABLE}"
+
   OUTPUT "${COMPILED_PETRI_NET}"
   DEPENDS "${PETRI_NET}"
+          ${PYTHON_LIBRARIES}
 )
 add_custom_target (compiled_petri_net
   ALL
@@ -77,6 +79,7 @@ add_custom_command (
     +make -C "${WRAPPER_DIRECTORY}"
   OUTPUT "${WRAPPER_LIBRARY}"
   DEPENDS "${PETRI_NET}"
+          ${PYTHON_LIBRARIES}
 )
 add_custom_target (workflow_library
   ALL
