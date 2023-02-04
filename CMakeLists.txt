@@ -65,6 +65,8 @@ add_custom_command (
       --input="${PETRI_NET}"
       --output="/dev/null"
       --gen-cxxflags=-I"${PYTHON_INCLUDE_DIRS}"
+      --gen-cxxflags=-L"${PYTHON_LIBRARIES}"
+      --gen-cxxflags=-l"${PYTHON_EXECUTABLE}"
       --path-to-cpp="${WRAPPER_DIRECTORY}"
   COMMAND
     +make -C "${WRAPPER_DIRECTORY}"
