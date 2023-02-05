@@ -22,9 +22,11 @@
         <code><![CDATA[
           Py_Initialize();
           
+          std::cout << "before python function" << std::endl;
           PyRun_SimpleString("import time\ntime.sleep(5)");
+          std::cout << "after python function" << std::endl;
           Py_Finalize();
-          std::cout << "Worker here!" << std::endl;
+          
           
           // convert integer from token to string filename
           char buffer[4];
