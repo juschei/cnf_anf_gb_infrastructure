@@ -4,6 +4,6 @@ cd "/home/juschei/Desktop/spack/opt/spack/linux-ubuntu20.04-sandybridge/gcc-9.4.
   --nodefile="/home/juschei/Desktop/aggregate_sum/nodefile"                                                \
   --rif-strategy=ssh                                                          \
   --topology="worker:$1"                           \
-  --N=47 \
+  --N=4 \
   --log-host="localhost" \
   --log-port=7777
