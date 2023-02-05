@@ -21,7 +21,8 @@
         <cinclude href="Python.h"/>
         <code><![CDATA[
           Py_Initialize();
-          PyRun_SimpleString("print('test')");
+          
+          PyRun_SimpleString("import time\ntime.sleep(5)");
           Py_Finalize();
           std::cout << "Worker here!" << std::endl;
           
