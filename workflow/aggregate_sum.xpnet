@@ -35,6 +35,13 @@
           name = PyUnicode_FromString((char*)"testsage");
           load_module = PyImport_Import(name);
 
+          if(load_module == NULL) {
+            std::cout << "ERROR importing module" << std::endl;
+            exit(-1);
+          }
+
+          std::cout << "module imported" << std::endl;
+
           Py_Finalize();
           
           
