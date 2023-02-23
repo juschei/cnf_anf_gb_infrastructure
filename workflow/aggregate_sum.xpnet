@@ -27,6 +27,14 @@
           PyRun_SimpleString("import os\nprint(os.getcwd())");
 
           std::cout << "after python function" << std::endl;
+
+          PyObject *sysPath = PySys_GetObject("path");
+          PyList_Append(sysPath, PyUnicode_FromString("/home/juschei/Desktop/aggregate_sum/src"));
+
+          PyObject *name, *load_module;
+          name = PyUnicode_FromString((char*)"testsage");
+          load_module = PyImport_Import(name);
+
           Py_Finalize();
           
           
