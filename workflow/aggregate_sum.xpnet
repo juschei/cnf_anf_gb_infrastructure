@@ -23,7 +23,9 @@
           Py_Initialize();
           
           std::cout << "before python function" << std::endl;
-          //PyRun_SimpleString("import time\ntime.sleep(5)");
+
+          PyRun_SimpleString("import os\nprint(os.getcwd())");
+
           std::cout << "after python function" << std::endl;
           Py_Finalize();
           
@@ -53,7 +55,7 @@
           std::cout << command << std::endl;
           
           // execute command on system
-          std::cout << system(command) << std::endl;
+          //std::cout << system(command) << std::endl;
           //sleep(2);
         ]]></code>
         </module>
