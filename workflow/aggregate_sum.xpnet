@@ -31,7 +31,7 @@
           PyObject *sysPath = PySys_GetObject("path");
           PyList_Append(sysPath, PyUnicode_FromString("/home/juschei/Desktop/aggregate_sum/src"));
 
-          PyObject *name, *load_module;
+          PyObject *name, *load_module, *callfunc;
           name = PyUnicode_FromString((char*)"testsage");
           load_module = PyImport_Import(name);
 
@@ -39,8 +39,18 @@
             std::cout << "ERROR importing module" << std::endl;
             exit(-1);
           }
-
           std::cout << "module imported" << std::endl;
+
+          func = PyObject_GetAttrString(load_module, (char*)"test");
+          callfunc = PyObject_CallObject(func, NULL);
+
+          if(callfunc == NULL){
+             std::cout << "ERROR calling function" << std::endl;
+             exit(-1);
+          }
+
+          double fun1_output = PyFloat_AsDouble(callfunc);
+          std::cout << fun1_output << std::endl;
 
           Py_Finalize();
           
