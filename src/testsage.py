@@ -44,6 +44,7 @@
         
 def process_wrapper(nr):
     import traceback
+    DOT_SAGE = "/home/juschei/.sage"
     try:
        import sage.rings.polynomial.pbori   # import sage library
     except Exception as e:
