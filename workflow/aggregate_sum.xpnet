@@ -48,6 +48,8 @@
           double fun1_output = PyFloat_AsDouble(callfunc);
           std::cout << fun1_output << std::endl;
 
+          Py_DECREF(load_module);
+
           Py_Finalize();
           
           
