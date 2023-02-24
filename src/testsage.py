@@ -5,7 +5,7 @@ try:
     from sage.all_cmdline import *   # import sage library
 except Exception as e:
     with open("/home/juschei/Desktop/cnf_anf_gb/output/log") as f:
-        f.write(e)
+        f.write("abs")
 
 #from sage.rings.polynomial.pbori import BooleanPolynomialRing
 # import msgspec
