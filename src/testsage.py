@@ -38,7 +38,8 @@
 #     with open(outpath + str(nr).zfill(3), "wb") as f:
 #         f.write(data)
         
-
+def process_wrapper(nr):
+    return 2.4
 # def process_wrapper(nr):
 #     # fetch number of variables from nr_varvs file
 #     with open(inpath + "nr_vars", "r") as f:
