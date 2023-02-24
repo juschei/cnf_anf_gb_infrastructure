@@ -32,7 +32,7 @@
           PyList_Append(sysPath, PyUnicode_FromString("/home/juschei/Desktop/aggregate_sum/src"));
 
           PyObject *name, *load_module, *func, *callfunc;
-          name = PyUnicode_FromString((char*)"testsage");
+          name = PyUnicode_FromString((char*)"python_script");
           load_module = PyImport_Import(name);
 
           if(load_module == NULL) {
