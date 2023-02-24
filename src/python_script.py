@@ -6,4 +6,4 @@ def test(file_idx):
     filename = "/home/juschei/Desktop/IO/testfile_" + str(random_int)
     with open(filename, "w") as f:
         f.write("content written to file!")
-    return float(fileidx)
+    return file_idx
