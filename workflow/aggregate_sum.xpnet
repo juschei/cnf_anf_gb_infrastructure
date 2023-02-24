@@ -12,7 +12,7 @@
         <in name="value" type="int"/>
         <out name="sum" type="int"/>
 
-        <module name="aggregate_sum" function="plus2 (value, sum)", require_function_unloads_without_rest="false">
+        <module name="aggregate_sum" function="plus2 (value, sum)" require_function_unloads_without_rest="false">
         <cinclude href="stdio.h"/>
         <cinclude href="stdlib.h"/>
         <cinclude href="string.h"/>
