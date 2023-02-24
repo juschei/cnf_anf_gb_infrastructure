@@ -42,7 +42,7 @@
           std::cout << "module imported" << std::endl;
 
           func = PyObject_GetAttrString(load_module, (char*)"test");
-          PyObject *args = PyTuple_Pack(1, PyLong_FromLong((long) value);
+          PyObject *args = PyTuple_Pack(1, PyLong_FromLong((long) value));
           callfunc = PyObject_CallObject(func, args);
 
           if(callfunc == NULL){
