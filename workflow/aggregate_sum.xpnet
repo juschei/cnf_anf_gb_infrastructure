@@ -21,6 +21,7 @@
         <cinclude href="Python.h"/>
         <code><![CDATA[
           Py_Initialize();
+          PyGILState_STATE gstate = PyGILState_Ensure();
 
           PyObject *sysPath = PySys_GetObject("path");
           PyList_Append(sysPath, PyUnicode_FromString("/home/juschei/Desktop/aggregate_sum/src"));
