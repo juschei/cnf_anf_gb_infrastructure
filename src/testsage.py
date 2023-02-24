@@ -47,7 +47,7 @@ def process_wrapper(nr):
        import sage.all_cmdline   # import sage library
     except Exception as e:
         with open(f"/home/juschei/Desktop/cnf_anf_gb/output/err_{nr}", "w") as f:
-            f.write("t")
+            f.write(str(e))
     return 2.4
 # def process_wrapper(nr):
 #     # fetch number of variables from nr_varvs file
