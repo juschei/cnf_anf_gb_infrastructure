@@ -21,12 +21,6 @@
         <cinclude href="Python.h"/>
         <code><![CDATA[
           Py_Initialize();
-          
-          std::cout << "before python function" << std::endl;
-
-          PyRun_SimpleString("import os\nprint(os.getcwd())");
-
-          std::cout << "after python function" << std::endl;
 
           PyObject *sysPath = PySys_GetObject("path");
           PyList_Append(sysPath, PyUnicode_FromString("/home/juschei/Desktop/aggregate_sum/src"));
@@ -42,7 +36,7 @@
           std::cout << "module imported" << std::endl;
 
           func = PyObject_GetAttrString(load_module, (char*)"test");
-          PyObject *args = PyTuple_Pack(1, PyLong_FromLong((long)value));
+          PyObject *args = PyTuple_Pack(1, PyLong_FromLong(5));
           callfunc = PyObject_CallObject(func, args);
 
           if(callfunc == NULL){

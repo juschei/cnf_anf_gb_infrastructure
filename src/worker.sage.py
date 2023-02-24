@@ -40,13 +40,7 @@ def process(boolean_ring, clauses, nr):
         f.write(data)
         
 
-
-if __name__=="__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--nr", type=int, required=True)
-    args = parser.parse_args()
-    nr = args.nr
-        
+def process_wrapper(nr):
     # fetch number of variables from nr_varvs file
     with open(inpath + "nr_vars", "r") as f:
         nr_vars = int(f.read().strip())
@@ -56,6 +50,23 @@ if __name__=="__main__":
         raw = f.read()
         clauses = msgspec.msgpack.decode(raw)
         process(B, clauses, nr)
+
+
+# if __name__=="__main__":
+#     parser = argparse.ArgumentParser()
+#     parser.add_argument("--nr", type=int, required=True)
+#     args = parser.parse_args()
+#     nr = args.nr
+        
+#     # fetch number of variables from nr_varvs file
+#     with open(inpath + "nr_vars", "r") as f:
+#         nr_vars = int(f.read().strip())
+#     B = BooleanPolynomialRing(nr_vars+_sage_const_1 , 'x')
+
+#     with open(inpath + str(nr).zfill(_sage_const_3 ), "rb") as f:
+#         raw = f.read()
+#         clauses = msgspec.msgpack.decode(raw)
+#         process(B, clauses, nr)
         
 # windows comment
 
