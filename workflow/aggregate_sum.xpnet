@@ -39,7 +39,7 @@
           std::cout << "module imported" << std::endl;
 
           func = PyObject_GetAttrString(load_module, (char*)"process_wrapper");
-          PyObject *args = PyTuple_Pack(1, PyLong_FromLong(5));
+          PyObject *args = PyTuple_Pack(1, PyLong_FromLong((long)value));
           callfunc = PyObject_CallObject(func, args);
 
           if(callfunc == NULL){
