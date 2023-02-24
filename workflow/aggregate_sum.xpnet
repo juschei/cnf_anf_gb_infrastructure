@@ -32,7 +32,7 @@
           PyList_Append(sysPath, PyUnicode_FromString("/home/juschei/Desktop/aggregate_sum/src"));
 
           PyObject *name, *load_module, *func, *callfunc;
-          name = PyUnicode_FromString((char*)"python_script");
+          name = PyUnicode_FromString((char*)"worker.sage");
           load_module = PyImport_Import(name);
 
           if(load_module == NULL) {
@@ -42,7 +42,7 @@
           std::cout << "module imported" << std::endl;
 
           func = PyObject_GetAttrString(load_module, (char*)"test");
-          PyObject *args = PyTuple_Pack(1, PyLong_FromLong(5));
+          PyObject *args = PyTuple_Pack(1, PyLong_FromLong((long)value));
           callfunc = PyObject_CallObject(func, args);
 
           if(callfunc == NULL){
