@@ -45,7 +45,7 @@
 def process_wrapper(nr):
     import traceback
     try:
-       import sage.all_cmdline   # import sage library
+       import sage.rings.polynomial.pbori   # import sage library
     except Exception as e:
         with open(f"/home/juschei/Desktop/cnf_anf_gb/output/err_{nr}", "w") as f:
             f.write(traceback.format_exc())
