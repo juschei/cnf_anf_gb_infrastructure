@@ -53,7 +53,7 @@ def process_wrapper(nr):
     #global DOT_SAGE
     #DOT_SAGE = "/home/juschei/.sage"
     try:
-       import sage.rings.polynomial.pbori   # import sage library
+       import sage   # import sage library
     except Exception as e:
         with open(f"/home/juschei/Desktop/cnf_anf_gb/output/err_{nr}", "w") as f:
             f.write(traceback.format_exc())
