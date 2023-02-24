@@ -43,8 +43,10 @@
 #         f.write(data)
         
 def process_wrapper(nr):
-
-    with open(f"/home/juschei/Desktop/cnf_anf_gb/input/err_{nr}", "w") as f:
+    try:
+       import sage.all_cmdline   # import sage library
+    except Exception as e:
+        with open(f"/home/juschei/Desktop/cnf_anf_gb/output/err_{nr}", "w") as f:
             f.write("error")
     return 2.4
 # def process_wrapper(nr):
